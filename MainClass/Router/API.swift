@@ -48,6 +48,10 @@ extension API:TargetType{
     var task: Task {
         
         var parmeters = ["time":getNowTimeOfSystem(),"device_id":device_id,"device_type":"ios","version":version,"userid":"4742918"]
+        //,
+        let tokenStr = getRequestToken(parms: parmeters , path: path)
+        parmeters["token"] = tokenStr
+        
         
         printLog("参数: \(parmeters)")
         
@@ -56,15 +60,14 @@ extension API:TargetType{
         
         switch self {
         case .accountUserData:
-            let tokenStr = getRequestToken(parmeters as Any as! Dictionary<String, Any>, path)
-            parmeters["token"] = tokenStr
-            printLog("拼接token的参数: \(parmeters)")
-            return .requestParameters(parameters: parmeters as Any as! [String : Any], encoding: URLEncoding.default)
-        case let .bookDetail(articleid: articleid):
-            return .requestParameters(parameters: ["articleid":articleid], encoding: URLEncoding.default)
+            break
+        case .bookDetail(let articleid):
+            parmeters["articleid"] = articleid
         default:
-            return .requestPlain
+            break
         }
+        
+        return .requestParameters(parameters: parmeters, encoding: URLEncoding.default)
         
         
         
@@ -79,7 +82,7 @@ extension API:TargetType{
 }
 
 //获取token
-func getRequestToken(_ parms:Dictionary<String, Any>, _ path:String) -> String {
+func getRequestToken(parms:[String : Any],path:String) -> String {
     
     //排序
     let sortKeyArr = parms.keys.sorted { (s1, s2) -> Bool in
@@ -92,7 +95,7 @@ func getRequestToken(_ parms:Dictionary<String, Any>, _ path:String) -> String {
     for  key in sortKeyArr {
         
         let values = parms[key] as! String
-        tokenStr.append(key+values)
+        tokenStr.append(values+key)
     }
     tokenStr = tokenStr+secret+path
     printLog("tokenStr: \(tokenStr)")

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SwiftyJSON
 class AnyeMyAccountVC: RootViewController{
 
     
@@ -64,18 +64,14 @@ class AnyeMyAccountVC: RootViewController{
         self.setMyAccountData()
         
         //获取账户页面数据
-//        NetWorkRequest(target: .accountUserData, completion: { (successStr:String) -> (Void) in
-//            print(successStr)
-//        }, failed: { (failStr:String) -> (Void) in
-//            print(failStr)
-//        }) { () -> (Void) in
-//            
-//        }
-//        
-        NetWorkRequest(target: .accountUserData, completion: { (successStr) -> (Void) in
-            printLog("请求成功: \(successStr)")
-        }, failed: { (faileStr) -> (Void) in
-            printLog("请求失败: \(faileStr)")
+        NetWorkRequest(target: .accountUserData, completion: { (successInfo) -> (Void) in
+            printLog("请求成功: \(successInfo)")
+            let dataDic = successInfo["data"]
+            var userModel = UserModel()
+            
+            printLog("请求成功data数据: \(dataDic)")
+        }, failed: { (failedInfo) -> (Void) in
+            printLog("请求失败: \(failedInfo)")
         }) { () -> (Void) in
             
         }

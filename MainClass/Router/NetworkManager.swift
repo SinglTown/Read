@@ -15,9 +15,9 @@ import SwiftyJSON
 //超时时长
 private var requestTimeOut:Double = 30
 //成功数据的回调
-typealias successCallBack = ((_ successStr:String) -> (Void))
+typealias successCallBack = ((_ successInfo:JSON) -> (Void))
 //失败的回调
-typealias failedCallback = ((_ failStr:String) -> (Void))
+typealias failedCallback = ((_ failedInfo:JSON) -> (Void))
 ///网络错误的回调
 typealias errorCallback = (() -> (Void))
 
@@ -94,14 +94,11 @@ func NetWorkRequest(target: API, completion: @escaping successCallBack, failed: 
         case  let .success(response):
             do{
                 let jsonData = JSON(data: response.data)
-//                completion(String(data: response.data, encoding: String.Encoding.utf8)!)
-//                print("\(jsonData)")
-                
                 if jsonData["code"] == 200 {
-                    completion(String(data: response.data, encoding: String.Encoding.utf8)!)
+                    completion(jsonData)
                 }else{
                     if failed != nil {
-                        failed!(String(data: response.data, encoding: String.Encoding.utf8)!)
+                        failed!(jsonData)
                     }
                 }
             }catch{
@@ -113,7 +110,6 @@ func NetWorkRequest(target: API, completion: @escaping successCallBack, failed: 
             }
             print(error)
             break;
-            
         }
         
     }

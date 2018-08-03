@@ -10,6 +10,7 @@
 import Foundation
 import UIKit
 
+
 let windWidth = UIScreen.main.bounds.width
 let windHeight =  UIScreen.main.bounds.height
 
@@ -34,8 +35,8 @@ func SETMyFontWith(_ fontSize:CGFloat) -> UIFont {
 let secret = "huiwenanye"
 
 //参数
-let device_id = MyUUIDManager.getUUID()
-let version = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
+let device_id = MyUUIDManager.getUUID()!
+let version = Bundle.main.infoDictionary!["CFBundleShortVersionString"]!
 //图片
 func myImageNamed(_ imageStr:String) -> UIImage {
     let endImage = UIImage(named: imageStr)

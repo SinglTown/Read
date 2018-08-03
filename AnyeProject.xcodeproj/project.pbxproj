@@ -29,6 +29,7 @@
 		FF11A9B820F6143F00F2C5EC /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF11A9B620F6143F00F2C5EC /* AccountModel.swift */; };
 		FF11A9B920F6143F00F2C5EC /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF11A9B620F6143F00F2C5EC /* AccountModel.swift */; };
 		FF11A9BB20F6E3D300F2C5EC /* AnyeAccountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF11A9BA20F6E3D300F2C5EC /* AnyeAccountCell.swift */; };
+		FF28E1162112F8A4003C4F25 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF28E1152112F8A4003C4F25 /* UserModel.swift */; };
 		FF72DDBF20F72C880072CE58 /* HandyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72DDBE20F72C880072CE58 /* HandyModel.swift */; };
 		FF72DDC220F732510072CE58 /* MyTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FF72DDC120F732510072CE58 /* MyTestVC.m */; };
 		FF72DDEA20F738250072CE58 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = FF72DDC620F738240072CE58 /* LICENSE */; };
@@ -1279,6 +1280,7 @@
 		FF11A9B220F6045800F2C5EC /* AnyeProject-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AnyeProject-Bridging-Header.h"; sourceTree = "<group>"; };
 		FF11A9B620F6143F00F2C5EC /* AccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModel.swift; sourceTree = "<group>"; };
 		FF11A9BA20F6E3D300F2C5EC /* AnyeAccountCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyeAccountCell.swift; sourceTree = "<group>"; };
+		FF28E1152112F8A4003C4F25 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		FF72DDBE20F72C880072CE58 /* HandyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandyModel.swift; sourceTree = "<group>"; };
 		FF72DDC020F732510072CE58 /* MyTestVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyTestVC.h; sourceTree = "<group>"; };
 		FF72DDC120F732510072CE58 /* MyTestVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyTestVC.m; sourceTree = "<group>"; };
@@ -2717,6 +2719,7 @@
 			children = (
 				FF11A9B620F6143F00F2C5EC /* AccountModel.swift */,
 				FF72DDBE20F72C880072CE58 /* HandyModel.swift */,
+				FF28E1152112F8A4003C4F25 /* UserModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -5544,6 +5547,7 @@
 				FF72DE0D20F73C670072CE58 /* API.swift in Sources */,
 				FF72DDED20F738250072CE58 /* CustomDateFormatTransform.swift in Sources */,
 				FF11A9B720F6143F00F2C5EC /* AccountModel.swift in Sources */,
+				FF28E1162112F8A4003C4F25 /* UserModel.swift in Sources */,
 				FF11A93C20F4820800F2C5EC /* AnyeSectionHeaderView.swift in Sources */,
 				FF11A93A20F4820800F2C5EC /* AnyeBaseTableVIew.swift in Sources */,
 				FF72DDEF20F738250072CE58 /* HexColorTransform.swift in Sources */,
